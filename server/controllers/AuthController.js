@@ -28,10 +28,11 @@ export const login = async (req, res) => {
       return res.send("password is incorrect");
     }
 
-    res.cookie("jwt", createToken(email, user.id), {
+    res.cookie("jwt", createToken(user.email, user.id), {
       maxage,
       secure: true,
       sameSite: "None",
+      httpOnly: true,
     });
 
     return res.status(200).json({
