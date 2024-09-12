@@ -16,7 +16,7 @@ const db_url = process.env.MONGODB_URL;
 
 // Middleware setup
 app.use(cors({
-  origin: [process.env.ORIGIN],
+  origin: process.env.ORIGIN,
   methods: ["GET","PUT","POST","DELETE"],
   credentials: true,
 }));
